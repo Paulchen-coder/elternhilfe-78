@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const i=document.getElementById('search');if(!i)return;i.addEventListener('input',()=>{const q=i.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(q)?'':'none';});});});
