@@ -1,16 +1,16 @@
 const topics = [
   {
-    title: "Prozentrechnung",
+    title: "Prozentrechnung (Klasse 7)",
     url: "klasse7/prozentrechnung.html",
     tags: ["prozent", "rabatt", "klasse 7", "klasse7"]
   },
   {
-    title: "Bruchrechnung",
+    title: "Bruchrechnung (Klasse 7)",
     url: "klasse7/bruchrechnung.html",
-    tags: ["bruch", "brüche", "klasse 6", "klasse 7", "klasse7"]
+    tags: ["bruch", "brüche", "klasse 7", "klasse7"]
   },
   {
-    title: "Lineare Funktionen",
+    title: "Lineare Funktionen (Klasse 8)",
     url: "klasse8/lineare_funktionen.html",
     tags: ["funktion", "klasse 8", "klasse8"]
   },
@@ -25,6 +25,7 @@ const topics = [
     tags: ["ratgeber", "prüfung", "vorbereiten"]
   }
 ];
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("search-form");
