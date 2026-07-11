@@ -1,53 +1,89 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Suche – Elternportal Mathematik</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/search.js" defer></script>
-</head>
+// -------------------------------------------------------------
+// Suchindex: wird von den HTML-Seiten gefüllt
+// -------------------------------------------------------------
+const searchIndex = [];
 
-<body>
-  <header class="site-header">
-    <div class="logo">
-      <span class="logo-mark">M</span>
-      <span class="logo-text">Elternportal Mathematik</span>
-    </div>
+// -------------------------------------------------------------
+// Synonyme (werden automatisch ergänzt)
+// -------------------------------------------------------------
+const synonyms = {
+    "potenz": ["exponent", "hochzahl", "zahl hoch", "quadratzahl"],
+    "gleichung": ["term", "variable", "auflösen"],
+    "winkel": ["grad", "geometrie", "dreieck"],
+    "fläche": ["quadratmeter", "cm²", "rechteck", "dreieck"],
+    "volumen": ["liter", "cm³", "körper", "zylinder"],
+    "funktion": ["graph", "gerade", "parabel"],
+    "proportional": ["verhältnis", "faktor", "steigung"],
+    "dreieck": ["hypotenuse", "kathete", "rechtwinklig"],
+    "würfel": ["quader", "körper", "kanten"],
+    "wahrscheinlichkeit": ["zufall", "würfel", "karten", "stochastik"]
+};
 
-    <nav class="main-nav">
-      <a href="index.html">Startseite</a>
-      <a href="klasse7/index.html">Klasse 7</a>
-      <a href="klasse8/index.html">Klasse 8</a>
-      <a href="ratgeber/index.html">Ratgeber</a>
-      <a href="suche.html" class="active">Suche</a>
-    </nav>
-  </header>
+// -------------------------------------------------------------
+// Levenshtein-Distanz (Fuzzy-Matching für Tippfehler)
+// -------------------------------------------------------------
+function levenshtein(a, b) {
+    const matrix = [];
 
-  <main class="section">
-    <h1>Suche</h1>
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
 
-    <input id="searchInput" type="text" placeholder="Suchbegriff eingeben…" class="search-field">
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            matrix[i][j] = Math.min(
+                matrix[i-1][j] + 1,
+                matrix[i][j-1] + 1,
+                matrix[i-1][j-1] + (a[j-1] === b[i-1] ? 0 : 1)
+            );
+        }
+    }
 
-    <div id="results"></div>
-  </main>
+    return matrix[b.length][a.length];
+}
 
-  <script>
-    document.getElementById("searchInput").addEventListener("input", function() {
-      const term = this.value;
-      const results = search(term);
+// -------------------------------------------------------------
+// Haupt-Suchfunktion (Synonyme + Fuzzy-Matching + Ranking)
+// -------------------------------------------------------------
+function search(term) {
+    term = term.toLowerCase().trim();
+    if (!term) return [];
 
-      const container = document.getElementById("results");
-      container.innerHTML = "";
+    let terms = term.split(/\s+/);
 
-      results.forEach(r => {
-        const div = document.createElement("div");
-        div.className = "search-result";
-        div.innerHTML = `<a href="${r.url}">${r.title}</a>`;
-        container.appendChild(div);
-      });
+    // Synonyme ergänzen
+    let expandedTerms = new Set(terms);
+    terms.forEach(t => {
+        if (synonyms[t]) {
+            synonyms[t].forEach(s => expandedTerms.add(s));
+        }
     });
-  </script>
 
-</body>
-</html>
+    let results = [];
+
+    searchIndex.forEach(entry => {
+        let score = 0;
+
+        expandedTerms.forEach(t => {
+            entry.keywords.forEach(k => {
+                // exakter Treffer
+                if (k.includes(t)) score += 3;
+
+                // fuzzy Treffer (Tippfehler, ähnliche Wörter)
+                if (levenshtein(k, t) <= 2) score += 2;
+            });
+        });
+
+        if (score > 0) {
+            results.push({ entry, score });
+        }
+    });
+
+    // Treffer nach Relevanz sortieren
+    results.sort((a, b) => b.score - a.score);
+
+    return results.map(r => r.entry);
+}
