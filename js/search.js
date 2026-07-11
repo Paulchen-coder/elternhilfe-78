@@ -1,58 +1,54 @@
-const topics = [
-  {
-    title: "Prozentrechnung (Klasse 7)",
-    url: "klasse7/prozentrechnung.html",
-    tags: ["prozent", "rabatt", "klasse 7", "klasse7"]
-  },
-  {
-    title: "Bruchrechnung (Klasse 7)",
-    url: "klasse7/bruchrechnung.html",
-    tags: ["bruch", "brüche", "klasse 7", "klasse7"]
-  },
-  {
-    title: "Lineare Funktionen (Klasse 8)",
-    url: "klasse8/lineare_funktionen.html",
-    tags: ["funktion", "klasse 8", "klasse8"]
-  },
-  {
-    title: "Hausaufgaben begleiten",
-    url: "ratgeber/hausaufgaben-begleiten.html",
-    tags: ["ratgeber", "hausaufgaben", "lernen"]
-  },
-  {
-    title: "Klassenarbeiten vorbereiten",
-    url: "ratgeber/klassenarbeiten-vorbereiten.html",
-    tags: ["ratgeber", "prüfung", "vorbereiten"]
-  }
-];
+// ---------------------------------------------
+// Suchindex: wird automatisch von allen Seiten gefüllt
+// ---------------------------------------------
+const searchIndex = [];
 
+// ---------------------------------------------
+// Synonyme (werden automatisch ergänzt)
+// ---------------------------------------------
+const synonyms = {
+    "potenz": ["exponent", "hochzahl", "zahl hoch", "quadratzahl"],
+    "gleichung": ["term", "variable", "auflösen"],
+    "winkel": ["grad", "geometrie", "dreieck"],
+    "fläche": ["quadratmeter", "cm²", "rechteck", "dreieck"],
+    "volumen": ["liter", "cm³", "körper", "zylinder"],
+    "funktion": ["graph", "gerade", "parabel"],
+    "proportional": ["verhältnis", "faktor", "steigung"]
+};
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("search-form");
-  const input = document.getElementById("search-input");
-  const results = document.getElementById("search-results");
+// ---------------------------------------------
+// Suchalgorithmus
+// ---------------------------------------------
+function search(term) {
+    term = term.toLowerCase().trim();
+    let terms = term.split(/\s+/);
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const query = input.value.trim().toLowerCase();
+    // Synonyme ergänzen
+    let expandedTerms = new Set(terms);
+    terms.forEach(t => {
+        if (synonyms[t]) {
+            synonyms[t].forEach(s => expandedTerms.add(s));
+        }
+    });
 
-    if (!query) {
-      results.textContent = "Bitte gib ein Thema ein.";
-      return;
-    }
+    let results = [];
 
-    const matches = topics.filter(topic =>
-      topic.title.toLowerCase().includes(query) ||
-      topic.tags.some(tag => tag.includes(query))
-    );
+    searchIndex.forEach(entry => {
+        let score = 0;
 
-    if (matches.length === 0) {
-      results.textContent = "Kein passendes Thema gefunden.";
-      return;
-    }
+        expandedTerms.forEach(t => {
+            entry.keywords.forEach(k => {
+                if (k.includes(t)) score += 1;
+            });
+        });
 
-    results.innerHTML = matches
-      .map(m => `<p><a href="${m.url}">${m.title}</a></p>`)
-      .join("");
-  });
-});
+        if (score > 0) {
+            results.push({ entry, score });
+        }
+    });
+
+    // Treffer nach Relevanz sortieren
+    results.sort((a, b) => b.score - a.score);
+
+    return results.map(r => r.entry);
+}
