@@ -46,6 +46,68 @@ function levenshtein(a, b) {
 }
 
 // -------------------------------------------------------------
+// Automatische Keyword-Erweiterung
+// -------------------------------------------------------------
+function generateKeywordVariants(baseWords) {
+    const variants = new Set();
+
+    baseWords.forEach(word => {
+        const w = word.toLowerCase();
+
+        // Original
+        variants.add(w);
+
+        // Pluralformen
+        variants.add(w + "e");
+        variants.add(w + "en");
+        variants.add(w + "er");
+        variants.add(w + "s");
+
+        // Bindestrich-Varianten
+        variants.add(w + "-");
+        variants.add(w + "-gesetz");
+        variants.add(w + "-formel");
+
+        // Kurzformen
+        if (w.length > 4) {
+            variants.add(w.slice(0, 3));
+            variants.add(w.slice(0, w.length - 2));
+        }
+
+        // Tippfehler-Varianten (1 Buchstabe vertauscht)
+        for (let i = 0; i < w.length - 1; i++) {
+            variants.add(
+                w.slice(0, i) +
+                w[i + 1] +
+                w[i] +
+                w.slice(i + 2)
+            );
+        }
+
+        // Englische Varianten
+        if (w === "potenz") {
+            variants.add("power");
+            variants.add("power function");
+        }
+        if (w === "funktion") {
+            variants.add("function");
+            variants.add("graph");
+        }
+        if (w === "winkel") {
+            variants.add("angle");
+        }
+        if (w === "fläche") {
+            variants.add("area");
+        }
+        if (w === "volumen") {
+            variants.add("volume");
+        }
+    });
+
+    return Array.from(variants);
+}
+
+// -------------------------------------------------------------
 // Haupt-Suchfunktion (Synonyme + Fuzzy-Matching + Ranking)
 // -------------------------------------------------------------
 function search(term) {
