@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Suche – Elternportal Mathematik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/search.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">Elternportal Mathematik</span>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index.html">Startseite</a>
+      <a href="klasse7/index.html">Klasse 7</a>
+      <a href="klasse8/index.html">Klasse 8</a>
+      <a href="ratgeber/index.html">Ratgeber</a>
+      <a href="suche.html" class="active">Suche</a>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h1>Suche</h1>
+
+    <input id="searchInput" type="text" placeholder="Suchbegriff eingeben…" class="search-field">
+
+    <div id="results"></div>
+  </main>
+
+  <script>
+    document.getElementById("searchInput").addEventListener("input", function() {
+      const term = this.value;
+      const results = search(term);
+
+      const container = document.getElementById("results");
+      container.innerHTML = "";
+
+      results.forEach(r => {
+        const div = document.createElement("div");
+        div.className = "search-result";
+        div.innerHTML = `<a href="${r.url}">${r.title}</a>`;
+        container.appendChild(div);
+      });
+    });
+  </script>
+
+</body>
+</html>
