@@ -15,17 +15,25 @@
       <span class="logo-text">Elternportal Mathematik</span>
     </div>
 
+    <!-- KORREKTE NAVIGATION -->
     <nav class="main-nav">
-     <a href="index.html" class="active">Startseite</a>
-     <a href="klasse7/index.html">Klasse 7</a>
-     <a href="klasse8/index.html">Klasse 8</a>
-     <a href="ratgeber/index.html">Ratgeber</a>
-     <a href="kontakt.html">Kontakt</a>
-     <a href="impressum.html">Impressum</a>
-     <a href="datenschutz.html">Datenschutz</a>
-     <input id="navSearch" type="text" placeholder="Suche…" class="nav-search">
-     <div id="navResults" class="nav-search-results"></div>
+      <div class="nav-search-container">
+        <input id="navSearch" type="text" placeholder="Suche…" class="nav-search">
+        <div id="navResults" class="nav-search-results"></div>
+      </div>
 
+      <div class="quick-search-container">
+        <input id="quickSearch" type="text" placeholder="Schnell ein Thema finden…">
+        <div id="quickResults"></div>
+      </div>
+
+      <a href="index.html" class="active">Startseite</a>
+      <a href="klasse7/index.html">Klasse 7</a>
+      <a href="klasse8/index.html">Klasse 8</a>
+      <a href="ratgeber/index.html">Ratgeber</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </nav>
   </header>
 
@@ -37,30 +45,17 @@
         dass sie ihre Kinder sicher begleiten können – ohne Fachchinesisch.
       </p>
 
-    <div class="hero-actions">
-      <a href="klasse7/prozentrechnung.html" class="btn btn-primary">
-        Prozentrechnung (Klasse 7)
-      </a>
-      <a href="klasse7/index.html" class="btn btn-secondary">
-        Alle Themen Klasse 7
-      </a>
-      <a href="klasse8/index.html" class="btn btn-secondary">
-        Alle Themen Klasse 8
-      </a>
-    </div>
-
-    </section>
-
-    <section class="hero-search">
-      <h2>Schnell das richtige Thema finden</h2>
-      <p>Gib ein, was dein Kind gerade macht – z. B. „Prozent“, „Brüche“, „Klasse 7“.</p>
-
-      <form id="search-form">
-        <input type="text" id="search-input" placeholder="Thema suchen …">
-        <button type="submit">Suchen</button>
-      </form>
-
-      <div id="search-results"></div>
+      <div class="hero-actions">
+        <a href="klasse7/prozentrechnung.html" class="btn btn-primary">
+          Prozentrechnung (Klasse 7)
+        </a>
+        <a href="klasse7/index.html" class="btn btn-secondary">
+          Alle Themen Klasse 7
+        </a>
+        <a href="klasse8/index.html" class="btn btn-secondary">
+          Alle Themen Klasse 8
+        </a>
+      </div>
     </section>
   </main>
 
@@ -105,22 +100,21 @@
     <p class="footer-copy">© 2026 Elternportal Mathematik – Pilotprojekt.</p>
   </footer>
 
-  <script src="js/search.js"></script>
+  <!-- KORREKTE EINBINDUNG -->
+  <script src="js/search.js" defer></script>
+
+  <!-- Startseite im Suchindex -->
   <script>
-    document.getElementById("navSearch").addEventListener("input", function() {
-      const term = this.value;
-      const results = search(term);
-
-      const container = document.getElementById("navResults");
-      container.innerHTML = "";
-
-      results.slice(0, 5).forEach(r => {
-        const div = document.createElement("div");
-        div.innerHTML = `<a href="${r.url}">${r.title}</a>`;
-        container.appendChild(div);
-      });
+    searchIndex.push({
+      title: "Startseite",
+      url: "index.html",
+      keywords: generateKeywordVariants([
+        "startseite", "homepage", "mathematik", "elternportal",
+        "klasse 7", "klasse 8", "prozentrechnung", "bruchrechnung",
+        "lernen", "hilfe", "unterstützung"
+      ])
     });
-
   </script>
+
 </body>
 </html>
