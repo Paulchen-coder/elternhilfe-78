@@ -7,41 +7,36 @@ const searchIndex = [];
 // Synonyme (werden automatisch ergänzt)
 // -------------------------------------------------------------
 const synonyms = {
-    "potenz": ["exponent", "hochzahl", "zahl hoch", "quadratzahl"],
+    "potenz": ["exponent", "hochzahl", "quadratzahl"],
     "gleichung": ["term", "variable", "auflösen"],
     "winkel": ["grad", "geometrie", "dreieck"],
-    "fläche": ["quadratmeter", "cm²", "rechteck", "dreieck"],
-    "volumen": ["liter", "cm³", "körper", "zylinder"],
+    "fläche": ["quadratmeter", "rechteck"],
+    "volumen": ["liter", "zylinder"],
     "funktion": ["graph", "gerade", "parabel"],
     "proportional": ["verhältnis", "faktor", "steigung"],
-    "dreieck": ["hypotenuse", "kathete", "rechtwinklig"],
-    "würfel": ["quader", "körper", "kanten"],
-    "wahrscheinlichkeit": ["zufall", "würfel", "karten", "stochastik"]
+    "bruch": ["zähler", "nenner", "bruchzahl"],
+    "prozent": ["prozente", "rabatt", "anteil"]
 };
 
 // -------------------------------------------------------------
-// Levenshtein-Distanz (Fuzzy-Matching für Tippfehler)
+// Levenshtein-Distanz (Fuzzy-Matching)
 // -------------------------------------------------------------
 function levenshtein(a, b) {
-    const matrix = [];
-
-    for (let i = 0; i <= b.length; i++) {
-        matrix[i] = [i];
-    }
-    for (let j = 0; j <= a.length; j++) {
-        matrix[0][j] = j;
-    }
+    const matrix = Array.from({ length: b.length + 1 }, (_, i) =>
+        Array.from({ length: a.length + 1 }, (_, j) =>
+            i === 0 ? j : j === 0 ? i : 0
+        )
+    );
 
     for (let i = 1; i <= b.length; i++) {
         for (let j = 1; j <= a.length; j++) {
             matrix[i][j] = Math.min(
-                matrix[i-1][j] + 1,
-                matrix[i][j-1] + 1,
-                matrix[i-1][j-1] + (a[j-1] === b[i-1] ? 0 : 1)
+                matrix[i - 1][j] + 1,
+                matrix[i][j - 1] + 1,
+                matrix[i - 1][j - 1] + (a[j - 1] === b[i - 1] ? 0 : 1)
             );
         }
     }
-
     return matrix[b.length][a.length];
 }
 
@@ -54,7 +49,6 @@ function generateKeywordVariants(baseWords) {
     baseWords.forEach(word => {
         const w = word.toLowerCase();
 
-        // Original
         variants.add(w);
 
         // Pluralformen
@@ -63,10 +57,10 @@ function generateKeywordVariants(baseWords) {
         variants.add(w + "er");
         variants.add(w + "s");
 
-        // Bindestrich-Varianten
+        // Bindestrichvarianten
         variants.add(w + "-");
-        variants.add(w + "-gesetz");
         variants.add(w + "-formel");
+        variants.add(w + "-gesetz");
 
         // Kurzformen
         if (w.length > 4) {
@@ -74,7 +68,7 @@ function generateKeywordVariants(baseWords) {
             variants.add(w.slice(0, w.length - 2));
         }
 
-        // Tippfehler-Varianten (1 Buchstabe vertauscht)
+        // Tippfehler (Buchstaben vertauschen)
         for (let i = 0; i < w.length - 1; i++) {
             variants.add(
                 w.slice(0, i) +
@@ -108,7 +102,7 @@ function generateKeywordVariants(baseWords) {
 }
 
 // -------------------------------------------------------------
-// Haupt-Suchfunktion (Synonyme + Fuzzy-Matching + Ranking)
+// Haupt-Suchfunktion
 // -------------------------------------------------------------
 function search(term) {
     term = term.toLowerCase().trim();
@@ -131,10 +125,7 @@ function search(term) {
 
         expandedTerms.forEach(t => {
             entry.keywords.forEach(k => {
-                // exakter Treffer
                 if (k.includes(t)) score += 3;
-
-                // fuzzy Treffer (Tippfehler, ähnliche Wörter)
                 if (levenshtein(k, t) <= 2) score += 2;
             });
         });
@@ -144,8 +135,53 @@ function search(term) {
         }
     });
 
-    // Treffer nach Relevanz sortieren
     results.sort((a, b) => b.score - a.score);
 
     return results.map(r => r.entry);
 }
+
+// -------------------------------------------------------------
+// Navigation-Suche aktivieren
+// -------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const navInput = document.getElementById("navSearch");
+    const navResults = document.getElementById("navResults");
+
+    if (navInput && navResults) {
+        navInput.addEventListener("input", () => {
+            const term = navInput.value.trim();
+            const results = search(term);
+
+            navResults.innerHTML = "";
+
+            results.slice(0, 5).forEach(r => {
+                const div = document.createElement("div");
+                div.innerHTML = `<a href="${r.url}">${r.title}</a>`;
+                navResults.appendChild(div);
+            });
+        });
+    }
+});
+
+// -------------------------------------------------------------
+// Quick-Suche aktivieren
+// -------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const quickInput = document.getElementById("quickSearch");
+    const quickResults = document.getElementById("quickResults");
+
+    if (quickInput && quickResults) {
+        quickInput.addEventListener("input", () => {
+            const term = quickInput.value.trim();
+            const results = search(term);
+
+            quickResults.innerHTML = "";
+
+            results.forEach(r => {
+                const div = document.createElement("div");
+                div.innerHTML = `<a href="${r.url}">${r.title}</a>`;
+                quickResults.appendChild(div);
+            });
+        });
+    }
+});
