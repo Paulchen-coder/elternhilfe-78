@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Datenschutz – Elternportal Mathematik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">Elternportal Mathematik</span>
+    </div>
+
+    <nav class="main-nav">
+      <div class="nav-search-container">
+        <input id="navSearch" type="text" placeholder="Suche…" class="nav-search">
+        <div id="navResults" class="nav-search-results"></div>
+      </div>
+
+      <div class="quick-search-container">
+        <input id="quickSearch" type="text" placeholder="Schnell ein Thema finden…">
+        <div id="quickResults"></div>
+      </div>
+
+      <a href="index.html">Startseite</a>
+      <a href="klasse7/index.html">Klasse 7</a>
+      <a href="klasse8/index.html">Klasse 8</a>
+      <a href="ratgeber/index.html">Ratgeber</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html" class="active">Datenschutz</a>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h1>Datenschutz</h1>
+    <p class="lead">
+      Diese Seite ist ein Platzhalter für deine spätere Datenschutzerklärung.
+    </p>
+
+    <p>Typische Inhalte:</p>
+    <ul>
+      <li>Welche Daten gespeichert werden</li>
+      <li>Wie Daten verarbeitet werden</li>
+      <li>Welche Rechte Nutzer haben</li>
+      <li>Kontakt für Datenschutzfragen</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p class="footer-copy">© 2026 Elternportal Mathematik – Pilotprojekt.</p>
+  </footer>
+
+  <script src="js/search.js" defer></script>
+  <script>
+    searchIndex.push({
+      title: "Datenschutz",
+      url: "datenschutz.html",
+      keywords: generateKeywordVariants([
+        "datenschutz", "privacy", "daten", "verarbeitung",
+        "rechte", "schutz", "information"
+      ])
+    });
+  </script>
+
+</body>
+</html>
