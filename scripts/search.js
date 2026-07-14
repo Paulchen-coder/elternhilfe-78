@@ -4,7 +4,7 @@ console.log("SEARCH WIRD AUSGEFÜHRT");
 // -------------------------------------------------------------
 // GLOBALER SUCHINDEX
 // -------------------------------------------------------------
-const searchIndex = [];
+// searchIndex ist in ../data/searchIndex.js deklariert
 
 
 // -------------------------------------------------------------
