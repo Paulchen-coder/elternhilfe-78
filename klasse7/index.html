@@ -102,20 +102,11 @@
     <p class="footer-copy">© 2026 Elternportal Mathematik – Pilotprojekt.</p>
   </footer>
 
-  <!-- SUCHLOGIK LADEN (MUSS VOR dem Inline-Skript kommen!) -->
+  <!-- ZENTRALE SUCHINDEX-DATEI LADEN -->
+  <script src="../data/searchIndex.js"></script>
+  
+  <!-- SUCHLOGIK LADEN -->
   <script src="../scripts/search.js"></script>
 
-  <!-- SUCHINDEX-EINTRAG -->
-  <script>
-    searchIndex.push({
-      title: "Klasse 7 – Übersicht",
-      url: "klasse7/index.html",
-      keywords: generateKeywordVariants([
-        "klasse 7", "übersicht", "themen", "mathematik",
-        "prozentrechnung", "bruchrechnung", "terme", "variablen",
-        "gleichungen", "proportionalität", "geometrie"
-      ])
-    });
-  </script>
 </body>
 </html>
