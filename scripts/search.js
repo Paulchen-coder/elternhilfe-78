@@ -105,8 +105,8 @@ function search(term) {
 
         expandedTerms.forEach(t => {
             entry.keywords.forEach(k => {
-                if (k.includes(t)) score += 3; // direkter Treffer
-                else if (levenshtein(k, t) <= 2) score += 2; // fuzzy Treffer
+                if (k.includes(t)) score += 3;
+                else if (levenshtein(k, t) <= 2) score += 2;
             });
         });
 
@@ -158,23 +158,25 @@ function renderQuickResults(list) {
 
 
 // -------------------------------------------------------------
-// EVENT-LISTENER INITIALISIEREN (mit Verzögerung)
+// EVENT-LISTENER INITIALISIEREN
 // -------------------------------------------------------------
 function initializeSearchListeners() {
     const navSearch = document.getElementById("navSearch");
     const quickSearch = document.getElementById("quickSearch");
 
     if (navSearch) {
-        navSearch.addEventListener("input", () => {
+        navSearch.addEventListener("input", (e) => {
             const results = search(navSearch.value);
             renderNavResults(results);
+            console.log("navSearch input:", navSearch.value, "Results:", results.length);
         });
     }
 
     if (quickSearch) {
-        quickSearch.addEventListener("input", () => {
+        quickSearch.addEventListener("input", (e) => {
             const results = search(quickSearch.value);
             renderQuickResults(results);
+            console.log("quickSearch input:", quickSearch.value, "Results:", results.length);
         });
     }
 
@@ -182,13 +184,14 @@ function initializeSearchListeners() {
 }
 
 
-// Listener mit einer kleinen Verzögerung starten, um sicherzustellen,
-// dass alle Inline-Skripte bereits ausgeführt wurden
+// Direkt beim Script-Laden versuchen zu initialisieren
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(initializeSearchListeners, 100);
-    });
+    // Seite lädt noch
+    document.addEventListener("DOMContentLoaded", initializeSearchListeners);
 } else {
-    // Wenn das Skript nach DOMContentLoaded lädt
-    setTimeout(initializeSearchListeners, 100);
+    // Seite ist bereits geladen (sehr selten, aber möglich)
+    initializeSearchListeners();
 }
+
+// Zusätzlich: Nach einer kurzen Verzögerung nochmal versuchen
+setTimeout(initializeSearchListeners, 50);
