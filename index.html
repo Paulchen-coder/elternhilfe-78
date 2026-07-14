@@ -100,21 +100,11 @@
     <p class="footer-copy">© 2026 Elternportal Mathematik – Pilotprojekt.</p>
   </footer>
 
-  <!-- KORREKTE EINBINDUNG DER SUCHLOGIK -->
+  <!-- ZENTRALE SUCHINDEX-DATEI LADEN -->
+  <script src="data/searchIndex.js"></script>
+  
+  <!-- SUCHLOGIK LADEN -->
   <script src="scripts/search.js"></script>
-
-  <!-- Startseite im Suchindex -->
-  <script>
-    searchIndex.push({
-      title: "Startseite",
-      url: "index.html",
-      keywords: generateKeywordVariants([
-        "startseite", "homepage", "mathematik", "elternportal",
-        "klasse 7", "klasse 8", "prozentrechnung", "bruchrechnung",
-        "lernen", "hilfe", "unterstützung"
-      ])
-    });
-  </script>
 
 </body>
 </html>
