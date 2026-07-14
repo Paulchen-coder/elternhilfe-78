@@ -103,21 +103,11 @@
     <p class="footer-copy">© 2026 Elternportal Mathematik – Pilotprojekt.</p>
   </footer>
 
-  <!-- SUCHLOGIK LADEN (MUSS VOR dem Inline-Skript kommen!) -->
+  <!-- ZENTRALE SUCHINDEX-DATEI LADEN -->
+  <script src="../data/searchIndex.js"></script>
+  
+  <!-- SUCHLOGIK LADEN -->
   <script src="../scripts/search.js"></script>
 
-  <!-- SUCHINDEX-EINTRAG -->
-  <script>
-    searchIndex.push({
-      title: "Klasse 8 – Übersicht",
-      url: "klasse8/index.html",
-      keywords: generateKeywordVariants([
-        "klasse 8", "übersicht", "themen", "mathematik",
-        "funktionen", "lineare funktionen", "quadratische funktionen",
-        "potenzen", "potenzgesetze", "wahrscheinlichkeit",
-        "pythagoras", "körper", "volumen"
-      ])
-    });
-  </script>
 </body>
 </html>
