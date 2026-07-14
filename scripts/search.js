@@ -4,7 +4,7 @@ console.log("SEARCH WIRD AUSGEFÜHRT");
 // -------------------------------------------------------------
 // GLOBALER SUCHINDEX
 // -------------------------------------------------------------
-// searchIndex ist in ../data/searchIndex.js deklariert
+// searchIndex wird in ../data/searchIndex.js als window.searchIndex deklariert
 
 
 // -------------------------------------------------------------
@@ -100,20 +100,23 @@ function search(term) {
 
     const results = [];
 
-    searchIndex.forEach(entry => {
-        let score = 0;
+    // Nutze window.searchIndex statt searchIndex
+    if (window.searchIndex && Array.isArray(window.searchIndex)) {
+        window.searchIndex.forEach(entry => {
+            let score = 0;
 
-        expandedTerms.forEach(t => {
-            entry.keywords.forEach(k => {
-                if (k.includes(t)) score += 3;
-                else if (levenshtein(k, t) <= 2) score += 2;
+            expandedTerms.forEach(t => {
+                entry.keywords.forEach(k => {
+                    if (k.includes(t)) score += 3;
+                    else if (levenshtein(k, t) <= 2) score += 2;
+                });
             });
-        });
 
-        if (score > 0) {
-            results.push({ entry, score });
-        }
-    });
+            if (score > 0) {
+                results.push({ entry, score });
+            }
+        });
+    }
 
     results.sort((a, b) => b.score - a.score);
 
@@ -180,7 +183,7 @@ function initializeSearchListeners() {
         });
     }
 
-    console.log("✓ Search-Listener initialisiert. Index-Einträge:", searchIndex.length);
+    console.log("✓ Search-Listener initialisiert. Index-Einträge:", window.searchIndex ? window.searchIndex.length : 0);
 }
 
 
