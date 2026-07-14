@@ -158,10 +158,9 @@ function renderQuickResults(list) {
 
 
 // -------------------------------------------------------------
-// EVENT-LISTENER
+// EVENT-LISTENER INITIALISIEREN (mit Verzögerung)
 // -------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-
+function initializeSearchListeners() {
     const navSearch = document.getElementById("navSearch");
     const quickSearch = document.getElementById("quickSearch");
 
@@ -178,4 +177,18 @@ document.addEventListener("DOMContentLoaded", () => {
             renderQuickResults(results);
         });
     }
-});
+
+    console.log("✓ Search-Listener initialisiert. Index-Einträge:", searchIndex.length);
+}
+
+
+// Listener mit einer kleinen Verzögerung starten, um sicherzustellen,
+// dass alle Inline-Skripte bereits ausgeführt wurden
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(initializeSearchListeners, 100);
+    });
+} else {
+    // Wenn das Skript nach DOMContentLoaded lädt
+    setTimeout(initializeSearchListeners, 100);
+}
