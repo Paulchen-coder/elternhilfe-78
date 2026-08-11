@@ -9,27 +9,27 @@ window.searchIndex = [
     },
     {
         title: "Klasse 7 – Übersicht",
-        url: "klasse7/index.html",
+        url: "../klasse7/index.html",
         keywords: ["klasse 7", "übersicht", "themen", "mathematik", "prozentrechnung", "bruchrechnung", "terme", "variablen", "gleichungen", "proportionalität", "geometrie"]
     },
     {
         title: "Klasse 8 – Übersicht",
-        url: "klasse8/index.html",
+        url: "../klasse8/index.html",
         keywords: ["klasse 8", "übersicht", "themen", "mathematik", "funktionen", "lineare funktionen", "quadratische funktionen", "potenzen", "potenzgesetze", "wahrscheinlichkeit", "pythagoras"]
     },
     {
         title: "Bruchrechnung",
-        url: "klasse7/bruchrechnung.html",
+        url: "../klasse7/bruchrechnung.html",
         keywords: ["bruch", "brüche", "bruchrechnung", "nenner", "zähler", "kürzen", "erweitern", "bruchteil", "bruchzahl", "bruchstrich"]
     },
     {
         title: "Geometrie Grundlagen",
-        url: "klasse7/geometrie_grundlagen.html",
+        url: "../klasse7/geometrie_grundlagen.html",
         keywords: ["winkel", "dreieck", "viereck", "geometrie", "zirkel", "lineal", "fläche", "umfang", "konstruktion", "rechteck", "quadrat"]
     },
     {
         title: "Lineare Gleichungen",
-        url: "lineare_gleichungen.html",
+        url: "../lineare_gleichungen.html",
         keywords: ["gleichung", "gleichungen", "auflösen", "waage", "x finden", "term umformen", "klammern", "lineare gleichung", "term", "variable", "gleichgewicht", "auflösen", "umformen", "variable isolieren"]
     }
 ];
