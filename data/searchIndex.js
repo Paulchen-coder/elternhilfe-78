@@ -29,8 +29,13 @@ window.searchIndex = [
     },
     {
         title: "Lineare Gleichungen",
-        url: "/lineare_gleichungen.html",
+        url: "/klasse7/lineare_gleichungen.html",
         keywords: ["gleichung", "gleichungen", "auflösen", "waage", "x finden", "term umformen", "klammern", "lineare gleichung", "term", "variable", "gleichgewicht", "auflösen", "umformen", "variable isolieren"]
+    },
+    {
+        title: "Proportionalität",
+        url: "/klasse7/proportionalitaet.html",
+        keywords: ["proportional", "proportionalität", "faktor", "verhältnis", "y=kx", "steigung", "wertetabelle", "gerade", "ursprung", "antiproportional"]
     }
 ];
 
