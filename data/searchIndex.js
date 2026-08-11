@@ -81,6 +81,11 @@ window.searchIndex = [
         title: "Hausaufgaben begleiten",
         url: "/elternhilfe-78/ratgeber/hausaufgaben-begleiten.html",
         keywords: generateKeywordVariants(["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
+    },
+    {
+        title: "RATGEBER",
+        url: "/elternhilfe-78/ratgeber/index.html",
+        keywords: generateKeywordVariants(["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
     }
 ];
 
