@@ -46,6 +46,11 @@ window.searchIndex = [
         title: "Terme & Variablen",
         url: "/elternhilfe-78/klasse7/terme_variablen.html",
         keywords: ["term", "variable", "ausklammern", "vereinfachen", "gleichartige terme", "algebra", "x", "y", "platzhalter", "ausdrücke", "rechnen mit buchstaben"]
+    },
+    {
+        title: "Körper & Volumen",
+        url: "/elternhilfe-78/klasse8/koerper_volumen.html",
+        keywords: ["volumen", "körper", "würfel", "quader", "zylinder", "kugel", "grundfläche", "höhe", "cm³", "liter"]
     }
 ];
 
