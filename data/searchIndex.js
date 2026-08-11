@@ -36,6 +36,11 @@ window.searchIndex = [
         title: "Proportionalität",
         url: "/elternhilfe-78/klasse7/proportionalitaet.html",
         keywords: ["proportional", "proportionalität", "faktor", "verhältnis", "y=kx", "steigung", "wertetabelle", "gerade", "ursprung", "antiproportional"]
+    },
+    {
+        title: "Prozentrechnung",
+        url: "prozentrechnung.html",
+        keywords: generateKeywordVariants(["prozent", "prozente", "prozentrechnung", "anteil", "grundwert", "prozentwert", "prozentsatz", "rabatt", "mehrwert", "verminderung", "steigerung", "senkung"]
     }
 ];
 
