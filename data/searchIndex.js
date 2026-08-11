@@ -17,6 +17,11 @@ window.searchIndex = [
         url: "klasse8/index.html",
         keywords: ["klasse 8", "übersicht", "themen", "mathematik", "funktionen", "lineare funktionen", "quadratische funktionen", "potenzen", "potenzgesetze", "wahrscheinlichkeit", "pythagoras"]
     }
+    {
+        title: "Bruchrechnung",
+        url: "bruchrechnung.html",
+        keywords: ["bruch", "brüche", "bruchrechnung", "nenner", "zähler", "kürzen", "erweitern", "bruchteil", "bruchzahl", "bruchstrich"
+    }
 ];
 
 console.log("✓ searchIndex geladen:", window.searchIndex.length, "Einträge");
