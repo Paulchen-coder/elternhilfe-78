@@ -60,37 +60,42 @@ window.searchIndex = [
     {
         title: "Potenzgesetze",
         url: "/elternhilfe-78/klasse8/potenzgesetze.html",
-        keywords:generateKeywordVariants( ["potenz", "potenzen", "potenzgesetz", "potenzgesetze", "exponent", "basis", "hochzahl", "a^m", "a^n", "multiplizieren", "dividieren", "potenzieren", "potenzierung", "produkt", "quotient", "regel","gesetz"]
+        keywords: ["potenz", "potenzen", "potenzgesetz", "potenzgesetze", "exponent", "basis", "hochzahl", "a^m", "a^n", "multiplizieren", "dividieren", "potenzieren", "potenzierung", "produkt", "quotient", "regel","gesetz"]
     },
     {
         title: "Pythagoras",
         url: "/elternhilfe-78/klasse8/pythagoras.html",
-        keywords: generateKeywordVariants(["hypotenuse", "pythagoras", "kathete", "rechtwinklig", "a²+b²=c²", "dreieck", "geometrie", "hypotenuse", "länge berechnen"]
+        keywords: ["hypotenuse", "pythagoras", "kathete", "rechtwinklig", "a²+b²=c²", "dreieck", "geometrie", "hypotenuse", "länge berechnen"]
     },
     {
         title: "Quadratische Funktionen",
         url: "/elternhilfe-78/klasse8/quadratische_funktionen.html",
-        keywords: generateKeywordVariants(["parabel", "scheitelpunkt", "a", "b", "c", "mitternachtsformel", "pq-formel", "nullstellen", "graph", "quadratisch"]
+        keywords: ["parabel", "scheitelpunkt", "a", "b", "c", "mitternachtsformel", "pq-formel", "nullstellen", "graph", "quadratisch"]
     },
     {
         title: "Wahrscheinlichkeit",
         url: "/elternhilfe-78/klasse8/wahrscheinlichkeit.html",
-        keywords: generateKeywordVariants( ["wahrscheinlichkeit", "zufall", "würfel", "karten", "baumdiagramm", "günstige fälle", "mögliche fälle", "stochastik"]
+        keywords: ["wahrscheinlichkeit", "zufall", "würfel", "karten", "baumdiagramm", "günstige fälle", "mögliche fälle", "stochastik"]
     },
     {
         title: "Hausaufgaben begleiten",
         url: "/elternhilfe-78/ratgeber/hausaufgaben-begleiten.html",
-        keywords: generateKeywordVariants(["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
+        keywords: ["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
     },
     {
         title: "RATGEBER",
         url: "/elternhilfe-78/ratgeber/index.html",
-        keywords: generateKeywordVariants(["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
+        keywords: ["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
     },
     {
         title: "Klassenarbeiten vorbereiten",
         url: "/elternhilfe-78/ratgeber/klassenarbeiten-vorbereiten.html",
-        keywords: generateKeywordVariants(["klassenarbeit", "klassenarbeiten", "vorbereiten", "lernen", "prüfung", "test", "mathetest", "tipps", "ratgeber", "lernen zuhause", "unsicherheit", "nervosität", "vorbereitung"]
+        keywords: ["klassenarbeit", "klassenarbeiten", "vorbereiten", "lernen", "prüfung", "test", "mathetest", "tipps", "ratgeber", "lernen zuhause", "unsicherheit", "nervosität", "vorbereitung"]
+    },
+    {
+        title: "Wenn Ihr Kind feststeckt",
+        url: "/elternhilfe-78/ratgeber/wenn-ihr-kind-feststeckt.html",
+        keywords: ["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
     }
 ];
 
