@@ -56,6 +56,11 @@ window.searchIndex = [
         title: "Lineare Funktionen",
         url: "/elternhilfe-78/klasse8/lineare_funktionen.html",
         keywords: ["funktion", "gerade", "steigung", "y=mx+b", "graph", "koordinatensystem", "schnittpunkt", "wertetabelle"]
+    },
+    {
+        title: "Potenzgesetze",
+        url: "/elternhilfe-78/klasse8/potenzgesetze.html",
+        keywords:generateKeywordVariants( ["potenz", "potenzen", "potenzgesetz", "potenzgesetze", "exponent", "basis", "hochzahl", "a^m", "a^n", "multiplizieren", "dividieren", "potenzieren", "potenzierung", "produkt", "quotient", "regel","gesetz"]
     }
 ];
 
