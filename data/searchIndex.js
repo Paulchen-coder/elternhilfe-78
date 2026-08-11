@@ -39,12 +39,12 @@ window.searchIndex = [
     },
     {
         title: "Prozentrechnung",
-        url: "prozentrechnung.html",
+        url: "/elternhilfe-78/klasse7/prozentrechnung.html",
         keywords: ["prozent", "prozente", "prozentrechnung", "anteil", "grundwert", "prozentwert", "prozentsatz", "rabatt", "mehrwert", "verminderung", "steigerung", "senkung"]
     },
     {
         title: "Terme & Variablen",
-        url: "terme_variablen.html",
+        url: "/elternhilfe-78/klasse7/terme_variablen.html",
         keywords: ["term", "variable", "ausklammern", "vereinfachen", "gleichartige terme", "algebra", "x", "y", "platzhalter", "ausdrücke", "rechnen mit buchstaben"]
     }
 ];
