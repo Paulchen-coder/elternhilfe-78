@@ -86,6 +86,11 @@ window.searchIndex = [
         title: "RATGEBER",
         url: "/elternhilfe-78/ratgeber/index.html",
         keywords: generateKeywordVariants(["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
+    },
+    {
+        title: "Klassenarbeiten vorbereiten",
+        url: "/elternhilfe-78/ratgeber/klassenarbeiten-vorbereiten.html",
+        keywords: generateKeywordVariants(["klassenarbeit", "klassenarbeiten", "vorbereiten", "lernen", "prüfung", "test", "mathetest", "tipps", "ratgeber", "lernen zuhause", "unsicherheit", "nervosität", "vorbereitung"]
     }
 ];
 
