@@ -71,6 +71,11 @@ window.searchIndex = [
         title: "Quadratische Funktionen",
         url: "/elternhilfe-78/klasse8/quadratische_funktionen.html",
         keywords: generateKeywordVariants(["parabel", "scheitelpunkt", "a", "b", "c", "mitternachtsformel", "pq-formel", "nullstellen", "graph", "quadratisch"]
+    },
+    {
+        title: "Wahrscheinlichkeit",
+        url: "/elternhilfe-78/klasse8/wahrscheinlichkeit.html",
+        keywords: generateKeywordVariants( ["wahrscheinlichkeit", "zufall", "würfel", "karten", "baumdiagramm", "günstige fälle", "mögliche fälle", "stochastik"]
     }
 ];
 
