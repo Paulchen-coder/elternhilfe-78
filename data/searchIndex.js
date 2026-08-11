@@ -16,17 +16,17 @@ window.searchIndex = [
         title: "Klasse 8 – Übersicht",
         url: "klasse8/index.html",
         keywords: ["klasse 8", "übersicht", "themen", "mathematik", "funktionen", "lineare funktionen", "quadratische funktionen", "potenzen", "potenzgesetze", "wahrscheinlichkeit", "pythagoras"]
-    }
+    },
     {
         title: "Bruchrechnung",
         url: "bruchrechnung.html",
         keywords: ["bruch", "brüche", "bruchrechnung", "nenner", "zähler", "kürzen", "erweitern", "bruchteil", "bruchzahl", "bruchstrich"]
-    }
+    },
     {
         title: "Geometrie Grundlagen",
         url: "geometrie_grundlagen.html",
         keywords: ["winkel", "dreieck", "viereck", "geometrie", "zirkel", "lineal", "fläche", "umfang", "konstruktion", "rechteck", "quadrat"]
-    }
+    },
     {
         
     }
