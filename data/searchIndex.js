@@ -20,7 +20,15 @@ window.searchIndex = [
     {
         title: "Bruchrechnung",
         url: "bruchrechnung.html",
-        keywords: ["bruch", "brüche", "bruchrechnung", "nenner", "zähler", "kürzen", "erweitern", "bruchteil", "bruchzahl", "bruchstrich"
+        keywords: ["bruch", "brüche", "bruchrechnung", "nenner", "zähler", "kürzen", "erweitern", "bruchteil", "bruchzahl", "bruchstrich"]
+    }
+    {
+        title: "Geometrie Grundlagen",
+        url: "geometrie_grundlagen.html",
+        keywords: ["winkel", "dreieck", "viereck", "geometrie", "zirkel", "lineal", "fläche", "umfang", "konstruktion", "rechteck", "quadrat"]
+    }
+    {
+        
     }
 ];
 
