@@ -96,6 +96,11 @@ window.searchIndex = [
         title: "Wenn Ihr Kind feststeckt",
         url: "/elternhilfe-78/ratgeber/wenn-ihr-kind-feststeckt.html",
         keywords: ["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
+    },
+    {
+        title: "Datenschutz",
+        url: "/elternhilfe-78/datenschutz.html",
+        keywords: generateKeywordVariants(["datenschutz", "privacy", "daten", "verarbeitung", "rechte", "schutz", "information"]
     }
 ];
 
