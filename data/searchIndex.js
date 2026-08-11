@@ -51,6 +51,11 @@ window.searchIndex = [
         title: "Körper & Volumen",
         url: "/elternhilfe-78/klasse8/koerper_volumen.html",
         keywords: ["volumen", "körper", "würfel", "quader", "zylinder", "kugel", "grundfläche", "höhe", "cm³", "liter"]
+    },
+    {
+        title: "Lineare Funktionen",
+        url: "/elternhilfe-78/klasse8/lineare_funktionen.html",
+        keywords: ["funktion", "gerade", "steigung", "y=mx+b", "graph", "koordinatensystem", "schnittpunkt", "wertetabelle"]
     }
 ];
 
