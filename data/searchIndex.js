@@ -19,22 +19,22 @@ window.searchIndex = [
     },
     {
         title: "Bruchrechnung",
-        url: "/klasse7/bruchrechnung.html",
+        url: "/elternhilfe-78/klasse7/bruchrechnung.html",
         keywords: ["bruch", "brüche", "bruchrechnung", "nenner", "zähler", "kürzen", "erweitern", "bruchteil", "bruchzahl", "bruchstrich"]
     },
     {
         title: "Geometrie Grundlagen",
-        url: "/klasse7/geometrie_grundlagen.html",
+        url: "/elternhilfe-78/klasse7/geometrie_grundlagen.html",
         keywords: ["winkel", "dreieck", "viereck", "geometrie", "zirkel", "lineal", "fläche", "umfang", "konstruktion", "rechteck", "quadrat"]
     },
     {
         title: "Lineare Gleichungen",
-        url: "/klasse7/lineare_gleichungen.html",
+        url: "/elternhilfe-78/klasse7/lineare_gleichungen.html",
         keywords: ["gleichung", "gleichungen", "auflösen", "waage", "x finden", "term umformen", "klammern", "lineare gleichung", "term", "variable", "gleichgewicht", "auflösen", "umformen", "variable isolieren"]
     },
     {
         title: "Proportionalität",
-        url: "/klasse7/proportionalitaet.html",
+        url: "/elternhilfe-78/klasse7/proportionalitaet.html",
         keywords: ["proportional", "proportionalität", "faktor", "verhältnis", "y=kx", "steigung", "wertetabelle", "gerade", "ursprung", "antiproportional"]
     }
 ];
