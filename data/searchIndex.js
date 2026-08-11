@@ -106,6 +106,11 @@ window.searchIndex = [
         title: "Impressum",
         url: "/elternhilfe-78/impressum.html",
         keywords: ["impressum", "rechtliches", "anbieter", "verantwortlich", "haftung"]
+    },
+    {
+        title: "Kontakt",
+        url: "/elternhilfe-78/kontakt.html",
+        keywords: ["kontakt", "email", "adresse", "telefon", "support", "hilfe"]
     }
 ];
 
