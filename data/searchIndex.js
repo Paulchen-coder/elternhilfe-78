@@ -61,6 +61,11 @@ window.searchIndex = [
         title: "Potenzgesetze",
         url: "/elternhilfe-78/klasse8/potenzgesetze.html",
         keywords:generateKeywordVariants( ["potenz", "potenzen", "potenzgesetz", "potenzgesetze", "exponent", "basis", "hochzahl", "a^m", "a^n", "multiplizieren", "dividieren", "potenzieren", "potenzierung", "produkt", "quotient", "regel","gesetz"]
+    },
+    {
+        title: "Pythagoras",
+        url: "/elternhilfe-78/klasse8/pythagoras.html",
+        keywords: generateKeywordVariants(["hypotenuse", "pythagoras", "kathete", "rechtwinklig", "a²+b²=c²", "dreieck", "geometrie", "hypotenuse", "länge berechnen"]
     }
 ];
 
