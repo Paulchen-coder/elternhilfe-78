@@ -41,6 +41,11 @@ window.searchIndex = [
         title: "Prozentrechnung",
         url: "prozentrechnung.html",
         keywords: generateKeywordVariants(["prozent", "prozente", "prozentrechnung", "anteil", "grundwert", "prozentwert", "prozentsatz", "rabatt", "mehrwert", "verminderung", "steigerung", "senkung"]
+    },
+    {
+        title: "Terme & Variablen",
+        url: "terme_variablen.html",
+        keywords: generateKeywordVariants( ["term", "variable", "ausklammern", "vereinfachen", "gleichartige terme", "algebra", "x", "y", "platzhalter", "ausdrücke", "rechnen mit buchstaben"]
     }
 ];
 
