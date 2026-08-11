@@ -28,7 +28,9 @@ window.searchIndex = [
         keywords: ["winkel", "dreieck", "viereck", "geometrie", "zirkel", "lineal", "fläche", "umfang", "konstruktion", "rechteck", "quadrat"]
     },
     {
-        
+        title: "Lineare Gleichungen",
+        url: "lineare_gleichungen.html",
+        keywords: ["gleichung", "gleichungen", "auflösen", "waage", "x finden", "term umformen", "klammern", "lineare gleichung", "term", "variable", "gleichgewicht", "auflösen", "umformen", "variable isolieren"]
     }
 ];
 
