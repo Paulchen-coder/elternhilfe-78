@@ -76,6 +76,11 @@ window.searchIndex = [
         title: "Wahrscheinlichkeit",
         url: "/elternhilfe-78/klasse8/wahrscheinlichkeit.html",
         keywords: generateKeywordVariants( ["wahrscheinlichkeit", "zufall", "würfel", "karten", "baumdiagramm", "günstige fälle", "mögliche fälle", "stochastik"]
+    },
+    {
+        title: "Hausaufgaben begleiten",
+        url: "/elternhilfe-78/ratgeber/hausaufgaben-begleiten.html",
+        keywords: generateKeywordVariants(["ratgeber", "hilfe", "eltern", "lernen", "mathe", "hausaufgaben", "klassenarbeiten", "unterstützung", "motivation", "kind", "begleiten"]
     }
 ];
 
