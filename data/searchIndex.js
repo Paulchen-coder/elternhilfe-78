@@ -100,7 +100,12 @@ window.searchIndex = [
     {
         title: "Datenschutz",
         url: "/elternhilfe-78/datenschutz.html",
-        keywords: generateKeywordVariants(["datenschutz", "privacy", "daten", "verarbeitung", "rechte", "schutz", "information"]
+        keywords: ["datenschutz", "privacy", "daten", "verarbeitung", "rechte", "schutz", "information"]
+    },
+    {
+        title: "Impressum",
+        url: "/elternhilfe-78/impressum.html",
+        keywords: ["impressum", "rechtliches", "anbieter", "verantwortlich", "haftung"]
     }
 ];
 
