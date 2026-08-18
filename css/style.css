@@ -464,9 +464,3 @@ body {
     width: 100%;
   }
 }
-
-
-/* Homepage search */
-.hero-search{max-width:1100px;margin:0 auto 1rem;background:#172033;color:#fff;padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow-soft)}
-.search-badge{display:inline-block;padding:.25rem .65rem;border-radius:var(--radius-pill);background:#e9efff;color:#244487;font-size:.8rem;font-weight:700}
-.hero-search h2{margin:.7rem 0 .35rem}.hero-search p{color:#cbd5e1}.hero-search-box input{width:100%;padding:.7rem .9rem;border:1px solid #64748b;border-radius:11px;background:#fff;color:#172033;font:inherit}.hero-search-box input::placeholder{color:#64748b}.hero-search-box a{display:block;margin-top:.35rem;padding:.45rem .6rem;border-radius:8px;background:#3157a6;color:#fff!important;text-decoration:none}.hero-search-box a:hover{background:#5677bd}
