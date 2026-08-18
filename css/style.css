@@ -88,13 +88,15 @@ body {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-  gap: 2rem;
-  padding: 2.5rem 2rem 1.5rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.8rem 1.5rem 1rem;
+  gap: 1.2rem;
 }
 
 .hero-content {
   background: var(--bg-alt);
-  padding: 2rem;
+  padding: 1.5rem 1.7rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
 }
@@ -118,7 +120,7 @@ body {
 .hero-search {
   background: #0f172a;
   color: #e2e8f0;
-  padding: 2rem;
+  padding: 1.5rem 1.7rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
 }
