@@ -2,35 +2,27 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Elternportal Mathematik – Startseite</title>
+  <title>Elternhilfe Lernen – Startseite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Cloudflare Web Analytics -->
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ec889434f5347c0af0e57dd69904daa"}'></script>
-<!-- End Cloudflare Web Analytics -->
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ec889434f5347c0af0e57dd69904daa"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </head>
-
 <body>
   <header class="site-header">
     <div class="logo">
-      <span class="logo-mark">M</span>
-      <span class="logo-text">Elternportal Mathematik</span>
+      <span class="logo-mark" aria-hidden="true">EL</span>
+      <span class="logo-text">Elternhilfe Lernen</span>
     </div>
 
-    <!-- KORREKTE, EINHEITLICHE NAVIGATION -->
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Hauptnavigation">
       <div class="nav-search-container">
-        <input id="navSearch" type="text" placeholder="Suche…" class="nav-search">
+        <input id="navSearch" type="search" placeholder="Thema suchen …" class="nav-search" aria-label="Thema suchen">
         <div id="navResults" class="nav-search-results"></div>
       </div>
-
-      <div class="quick-search-container">
-        <input id="quickSearch" type="text" placeholder="Schnell ein Thema finden…">
-        <div id="quickResults"></div>
-      </div>
-
       <a href="index.html" class="active">Startseite</a>
       <a href="klasse7/index.html">Klasse 7</a>
       <a href="klasse8/index.html">Klasse 8</a>
@@ -43,56 +35,52 @@
 
   <main class="hero">
     <section class="hero-content">
-      <h1>Mathematik, die Eltern verstehen – damit Kinder besser lernen</h1>
+      <span class="hero-badge">Verständliche Hilfe für Eltern</span>
+      <h1>Mathematik verständlich erklärt – damit Sie Ihr Kind sicher begleiten können</h1>
       <p>
-        Dieses Elternportal hilft Müttern und Vätern, Mathematik so zu verstehen,
-        dass sie ihre Kinder sicher begleiten können – ohne Fachchinesisch.
+        Verständliche Erklärungen, Beispiele und Übungen für Eltern und
+        Schülerinnen und Schüler der Klassen 7 und 8 – ohne Fachchinesisch.
       </p>
-
       <div class="hero-actions">
-        <a href="klasse7/prozentrechnung.html" class="btn btn-primary">
-          Prozentrechnung (Klasse 7)
-        </a>
-        <a href="klasse7/index.html" class="btn btn-secondary">
-          Alle Themen Klasse 7
-        </a>
-        <a href="klasse8/index.html" class="btn btn-secondary">
-          Alle Themen Klasse 8
-        </a>
+        <a href="klasse7/prozentrechnung.html" class="btn btn-primary">Prozentrechnung entdecken</a>
+        <a href="klasse7/index.html" class="btn btn-secondary">Klasse 7</a>
+        <a href="klasse8/index.html" class="btn btn-secondary">Klasse 8</a>
+      </div>
+    </section>
+
+    <section class="hero-search" aria-label="Themensuche">
+      <span class="search-badge">Schnell zum Thema</span>
+      <h2>Wonach suchen Sie?</h2>
+      <p>Zum Beispiel: „Prozentrechnung“, „Brüche“ oder „Gleichungen“.</p>
+      <div class="hero-search-box">
+        <input id="quickSearch" type="search" placeholder="Thema suchen …" aria-label="Thema suchen">
+        <div id="quickResults"></div>
       </div>
     </section>
   </main>
 
   <section id="how-it-works" class="section">
-    <h2>Was dieses Elternportal besonders macht</h2>
-
+    <h2>Was Elternhilfe Lernen bietet</h2>
     <div class="feature-grid">
       <article class="feature">
         <h3>Alltagsnahe Beispiele</h3>
-        <p>Wir erklären Mathematik mit Situationen aus dem echten Leben.</p>
+        <p>Mathematik wird mit Situationen aus dem echten Leben verständlich gemacht.</p>
       </article>
-
       <article class="feature">
-        <h3>Schritt für Schritt erklärt</h3>
-        <p>Jede Erklärung ist klar strukturiert und direkt weitergebbar.</p>
+        <h3>Schritt für Schritt</h3>
+        <p>Die Erklärungen sind klar aufgebaut und können beim gemeinsamen Lernen direkt genutzt werden.</p>
       </article>
-
       <article class="feature">
         <h3>Elternfreundliche Sprache</h3>
-        <p>Keine Fachbegriffe ohne Erklärung. Verständlich, klar, hilfreich.</p>
+        <p>Fachbegriffe werden erklärt und komplizierte Inhalte verständlich aufbereitet.</p>
       </article>
     </div>
   </section>
 
   <section class="section section-highlight">
-    <h2>Beispielthema: Prozentrechnung</h2>
-    <p>
-      Die Prozentrechnung ist eines der wichtigsten Themen in Klasse 7 und 8.
-      Unsere Themenseite führt Eltern verständlich durch alle Grundlagen.
-    </p>
-    <a href="klasse7/prozentrechnung.html" class="btn btn-primary">
-      Zur Prozentrechnung
-    </a>
+    <h2>Einsteigen mit einem wichtigen Thema</h2>
+    <p>Die Prozentrechnung gehört zu den zentralen Themen der Klasse 7. Auf der Themenseite finden Sie Grundlagen, Beispiele und Hilfestellungen.</p>
+    <a href="klasse7/prozentrechnung.html" class="btn btn-primary">Zur Prozentrechnung</a>
   </section>
 
   <footer class="site-footer">
@@ -101,14 +89,10 @@
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </div>
-    <p class="footer-copy">© 2026 Elternportal Mathematik – Pilotprojekt.</p>
+    <p class="footer-copy">© 2026 Elternhilfe Lernen</p>
   </footer>
 
-  <!-- ZENTRALE SUCHINDEX-DATEI LADEN -->
   <script src="data/searchIndex.js"></script>
-  
-  <!-- SUCHLOGIK LADEN -->
   <script src="scripts/search.js"></script>
-
 </body>
 </html>
