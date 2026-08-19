@@ -85,8 +85,6 @@ body {
 
 /* Hero */
 
-/* Hero */
-
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.9fr);
