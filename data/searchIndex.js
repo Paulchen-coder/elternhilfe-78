@@ -20,7 +20,7 @@ window.searchIndex = [
     {
         title: "Bruchrechnung",
         url: "/klasse7/bruchrechnung.html",
-        keywords: ["bruch", "brüche", "bruchrechnung", "nenner", "zähler", "kürzen", "erweitern", "bruchteil", "bruchzahl", "bruchstrich"]
+        keywords: ["bruch", "brüche", "bruchrechnung", "nenner", "teiler", "zähler", "kürzen", "erweitern", "bruchteil", "bruchzahl", "bruchstrich"]
     },
     {
         title: "Geometrie Grundlagen",
